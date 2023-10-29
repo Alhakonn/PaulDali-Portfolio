@@ -1,0 +1,253 @@
+* { margin: 0px ;}
+
+body {
+    background-color: #080808;
+}
+
+@font-face { 
+    font-family: 'BebasKai-Regular';    
+    src:url('../font/BebasKai-Regular.otf');
+}
+
+p {
+    font-family: 'BebasKai-Regular';
+    font-size: 1.8em;
+    color: #AEAEAE;
+}
+
+h1 {
+    font-family: 'BebasKai-Regular';
+    font-size: 4.8em;
+    color: #fff;
+}
+
+
+/* En tête de la page */
+
+header {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+}
+
+header div { 
+    width: 33%;
+    display: flex;
+}
+
+div.choose a {
+    margin-left: 1em;
+}
+
+div.choose p:hover {
+    color: #ffff;
+}
+
+.selected {
+    color: #ffff;
+}
+
+header a {
+    text-decoration: none;
+}
+
+div.tittle {
+    justify-content: center;
+}
+
+
+/* Background Image */
+
+main {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+}
+
+main::before {    
+    content: "";
+    position: absolute;
+    background-image: url('../img/background.png');
+    background-size: cover;
+    background-repeat: repeat-y;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    filter: blur(1.5px);
+    opacity: 0.85;
+    z-index: -1;
+}
+
+
+/* Contenue des Pages*/
+
+
+/* Page d'accueil */
+
+main.accueil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main.accueil a {
+    height: 35em;
+    width: 55em;
+    margin: 0 50px 0 50px;
+    z-index: 1;   
+    display: inline-block;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+main.accueil a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+a.tattoo {
+    background-image: url("../img/tattoo/rosettetattoo2.jpg");
+    background-size: cover;
+    background-position: 0% 52%;
+    background-repeat: no-repeat;
+}
+
+a.flash {
+    background-image: url("../img/flash/saintflash.png");
+    background-size: cover;
+    background-position: 0% 5%;
+    background-repeat: no-repeat;
+}
+
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+    font-family: 'BebasKai-Regular';
+    font-size: 3em;
+    color: #fff;
+}
+
+.accueil a:hover::before {
+    opacity: 1;
+}
+
+a:hover .hover-text {
+    opacity: 1;
+    filter : brightness(100%);
+    color: white;
+}
+
+main.accueil a:hover {
+    transition: 0.5s;
+    width: 57em;
+    height: 37em;
+}
+
+
+/* Page tattoo */
+
+main.tattoo {
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
+
+main.tattoo img{
+    width: 30em;
+    height: min-content;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;    
+    transition: transform .5s ease;
+}
+
+main.tattoo div:hover img{
+    transform: scale(1.1);
+}
+
+main.tattoo div {
+    margin-top: 3em;
+    overflow: hidden;
+    transition: transform .5s ease;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px 0px inset;
+}
+
+main.tattoo div:nth-child(2n) {
+    margin-right: 4em;
+}
+
+main.tattoo div:nth-child(2n+1) {
+    margin-left: 4em;
+}
+
+
+/* Page flash */
+
+main.flash {
+    flex-direction: row;
+    justify-content: center;
+    height: fit-content;
+}
+
+main.flash::before {
+    background-size: contain;
+}
+
+main.flash section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+main.flash img {
+    width: 25em;
+    height: min-content;
+    object-fit: cover;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    z-index: -1;    
+    transition: transform .5s ease;
+}
+
+main.flash div:hover img{
+    transform: scale(1.2);
+}
+
+main.flash div {
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, 
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px,rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    margin-top: 3em;
+    overflow: hidden;
+    transition: transform .5s ease;
+}
+
+.ColonneGauche div:nth-child(2n+1) {
+    margin-left: 4em;
+}
+
+.ColonneGauche div:nth-child(2n) {
+    margin-right: 4em;
+}
+
+.ColonneDroite div:nth-child(2n+1) {
+    margin-right: 4em;
+}
+
+.ColonneDroite div:nth-child(2n) {
+    margin-left: 4em;
+}
